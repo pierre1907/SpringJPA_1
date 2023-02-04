@@ -28,8 +28,10 @@ public class SpringDdJpa1Application implements CommandLineRunner
 		//existeOuPas();
 		//rechercherUnEmploye();
 		//supprimerUnEmploye();
-		
-		
+		//memesNoms();
+		//memesPrenom();
+		//nomContenant();
+		nomCommencantPar();
 	}
 	
 	public void creerEmploye()
@@ -114,4 +116,133 @@ public class SpringDdJpa1Application implements CommandLineRunner
 		else
 			System.out.println("Employe non trouvé");
 	}
+
+	public void memesNoms()
+	{
+		List<Employe> liste =emprepo.findByNom("DIOP");
+		if( liste.size()==0)
+			System.out.println("La liste est vide, il n'y a pas de resultat");
+		else
+			for (Employe x :liste)
+			{
+				System.out.println("------------------------------");
+				System.out.println("Matricule:"+x.getMatr());
+				System.out.println("Nom:"+x.getNom());
+				System.out.println("Prenom:"+x.getPrenom());
+				System.out.println("Email:"+x.getEmail());
+				System.out.println("Salaire:"+x.getSalaire());
+			}
+		System.out.println("_____________________________________");
+	}
+
+
+	public void memesPrenom()
+	{
+		List<Employe> liste =emprepo.findByPrenom("IBRO");
+		if( liste.size()==0)
+			System.out.println("La liste est vide, il n'y a pas de resultat");
+		else
+			for (Employe x :liste)
+			{
+				System.out.println("------------------------------");
+				System.out.println("Matricule:"+x.getMatr());
+				System.out.println("Nom:"+x.getNom());
+				System.out.println("Prenom:"+x.getPrenom());
+				System.out.println("Email:"+x.getEmail());
+				System.out.println("Salaire:"+x.getSalaire());
+			}
+		System.out.println("_____________________________________");
+	}
+
+	public void memesSalaire()
+	{
+		List<Employe> liste =emprepo.findBySalaire(850000);
+		if( liste.size()==0)
+			System.out.println("La liste est vide, il n'y a pas de resultat");
+		else
+			for (Employe x :liste)
+			{
+				System.out.println("------------------------------");
+				System.out.println("Matricule:"+x.getMatr());
+				System.out.println("Nom:"+x.getNom());
+				System.out.println("Prenom:"+x.getPrenom());
+				System.out.println("Email:"+x.getEmail());
+				System.out.println("Salaire:"+x.getSalaire());
+			}
+		System.out.println("_____________________________________");
+	}
+
+	public void salaireSuperieur()
+	{
+		List<Employe> liste =emprepo.findBySalaireGreaterThan(450000);
+		if( liste.size()==0)
+			System.out.println("La liste est vide, il n'y a pas de resultat");
+		else
+			for (Employe x :liste)
+			{
+				System.out.println("------------------------------");
+				System.out.println("Matricule:"+x.getMatr());
+				System.out.println("Nom:"+x.getNom());
+				System.out.println("Prenom:"+x.getPrenom());
+				System.out.println("Email:"+x.getEmail());
+				System.out.println("Salaire:"+x.getSalaire());
+			}
+		System.out.println("_____________________________________");
+	}
+
+
+	public void salaireEntre()
+	{
+		List<Employe> liste =emprepo.findBySalaireBetween(450000, 600000);
+		if( liste.size()==0)
+			System.out.println("La liste est vide, il n'y a pas de resultat");
+		else
+			for (Employe x :liste)
+			{
+				System.out.println("------------------------------");
+				System.out.println("Matricule:"+x.getMatr());
+				System.out.println("Nom:"+x.getNom());
+				System.out.println("Prenom:"+x.getPrenom());
+				System.out.println("Email:"+x.getEmail());
+				System.out.println("Salaire:"+x.getSalaire());
+			}
+		System.out.println("_____________________________________");
+	}
+
+	public void nomContenant()
+	{
+		List<Employe> liste =emprepo.findByNomContaining("k");
+		if( liste.size()==0)
+			System.out.println("La liste est vide, il n'y a pas de resultat");
+		else
+			for (Employe x :liste)
+			{
+				System.out.println("------------------------------");
+				System.out.println("Matricule:"+x.getMatr());
+				System.out.println("Nom:"+x.getNom());
+				System.out.println("Prenom:"+x.getPrenom());
+				System.out.println("Email:"+x.getEmail());
+				System.out.println("Salaire:"+x.getSalaire());
+			}
+		System.out.println("_____________________________________");
+	}
+
+	public void nomCommencantPar()
+	{
+		List<Employe> liste =emprepo.findByNomLike("S");
+		if( liste.size()==0)
+			System.out.println("La liste est vide, il n'y a pas de resultat");
+		else
+			for (Employe x :liste)
+			{
+				System.out.println("------------------------------");
+				System.out.println("Matricule:"+x.getMatr());
+				System.out.println("Nom:"+x.getNom());
+				System.out.println("Prenom:"+x.getPrenom());
+				System.out.println("Email:"+x.getEmail());
+				System.out.println("Salaire:"+x.getSalaire());
+			}
+		System.out.println("_____________________________________");
+	}
+
 }

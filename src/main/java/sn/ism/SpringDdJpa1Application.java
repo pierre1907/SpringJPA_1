@@ -31,7 +31,7 @@ public class SpringDdJpa1Application implements CommandLineRunner
 		//memesNoms();
 		//memesPrenom();
 		//nomContenant();
-		nomCommencantPar();
+		nomComme();
 	}
 	
 	public void creerEmploye()
@@ -227,9 +227,9 @@ public class SpringDdJpa1Application implements CommandLineRunner
 		System.out.println("_____________________________________");
 	}
 
-	public void nomCommencantPar()
+	public void nomComme()
 	{
-		List<Employe> liste =emprepo.findByNomLike("S");
+		List<Employe> liste =emprepo.findByNomLike("%k%");
 		if( liste.size()==0)
 			System.out.println("La liste est vide, il n'y a pas de resultat");
 		else
